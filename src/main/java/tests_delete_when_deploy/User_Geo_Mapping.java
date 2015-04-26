@@ -1,4 +1,4 @@
-package rest_testing.jsons_parsers.user_parser;
+package tests_delete_when_deploy;
 
 /**
  * Created by Win81 on 4/26/2015.
