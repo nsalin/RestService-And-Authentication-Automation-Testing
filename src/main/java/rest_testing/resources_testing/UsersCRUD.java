@@ -12,6 +12,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
+//import rest_testing.jsons_parsers.user_parser.User;
 import rest_testing.rest_service_component.RestService;
 
 import java.io.IOException;
@@ -129,7 +130,7 @@ public class UsersCRUD extends Abstract_CRUD {
         List<NameValuePair> paramsChildGeo = new ArrayList<>();
         List<NameValuePair> paramsChildCompany = new ArrayList<>();
 
-        paramsChildAddress.add(new BasicNameValuePair("street","Ripensia"));
+        paramsChildAddress.add(new BasicNameValuePair("street","boss"));
         paramsChildAddress.add(new BasicNameValuePair("suite","A11"));
         paramsChildAddress.add(new BasicNameValuePair("city","TM"));
         paramsChildAddress.add(new BasicNameValuePair("zipcode","019245"));

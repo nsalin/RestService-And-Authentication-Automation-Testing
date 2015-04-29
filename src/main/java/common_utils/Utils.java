@@ -7,6 +7,10 @@ import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -62,6 +66,31 @@ public class Utils {
         Integer randomNumberFromArrayList = (Integer) arrayListName.get(random.nextInt(arrayListName.size()));
 
         return randomNumberFromArrayList;
+    }
+
+    public static String readFile(String filePath) throws FileNotFoundException {
+        BufferedReader br = new BufferedReader(new FileReader(filePath));
+        String fileReader = null;
+        try {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+
+            while (line != null) {
+                sb.append(line);
+                sb.append(System.lineSeparator());
+                line = br.readLine();
+            }
+            fileReader = sb.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                br.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return fileReader;
     }
 
 }
