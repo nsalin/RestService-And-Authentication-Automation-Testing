@@ -12,6 +12,8 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
+import rest_testing.json_parsers.comments_parser.Comments_Mapper;
+import rest_testing.json_parsers.comments_parser.JSON_Comments_Reader;
 import rest_testing.rest_service_component.RestService;
 
 import java.io.IOException;
@@ -38,9 +40,11 @@ public class CommentsCRUD extends Abstract_CRUD {
         String URL = "http://jsonplaceholder.typicode.com/comments";
         Logging logger = new Logging();
         RestService restService = new RestService();
+        JSON_Comments_Reader.parseComments("comments.json");
+        Comments_Mapper commentsMapper = new Comments_Mapper();
 
         List<NameValuePair> params = new ArrayList<NameValuePair>(2);
-        params.add(new BasicNameValuePair("postId", "1"));
+        params.add(new BasicNameValuePair("postId", String.valueOf(commentsMapper.getPostId())));
         params.add(new BasicNameValuePair("id", "1"));
         params.add(new BasicNameValuePair("name", "John"));
         params.add(new BasicNameValuePair("email", "alo@g.ro"));

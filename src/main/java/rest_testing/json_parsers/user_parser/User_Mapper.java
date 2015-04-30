@@ -3,7 +3,7 @@ package rest_testing.json_parsers.user_parser;
 /**
  * Created by Win81 on 4/26/2015.
  */
-public class User_Mapping {
+public class User_Mapper {
     private static int id;
     private static String name;
     private static String username;

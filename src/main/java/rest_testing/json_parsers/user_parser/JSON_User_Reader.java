@@ -1,5 +1,6 @@
 package rest_testing.json_parsers.user_parser;
 
+import common_utils.Constants;
 import common_utils.Utils;
 import org.json.JSONObject;
 
@@ -7,12 +8,12 @@ import org.json.JSONObject;
  * Created by Win81 on 4/27/2015.
  */
 public class JSON_User_Reader {
-    public static User_Mapping parserUser(String filePath){
-        User_Mapping userMapping = null;
+    public static User_Mapper parserUser(String jsonFileName){
+        User_Mapper userMapping = null;
         try{
-            String stringJson = Utils.readFile(filePath);
+            String stringJson = Utils.readFile(Constants.jsonResource + jsonFileName);
             JSONObject jsonUserReader = new JSONObject(stringJson);
-            userMapping = new User_Mapping();
+            userMapping = new User_Mapper();
 
             userMapping.setId(jsonUserReader.getInt("id"));
             userMapping.setName(jsonUserReader.getString("name"));

@@ -8,7 +8,7 @@
     <artifactId>DigitalEducationQATest</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-<dependencies>
+    <dependencies>
 
     <!--Rest-assured for testing REST APIs-->
     <dependency>
@@ -66,13 +66,32 @@
     </dependency>
 
     <!--JSON schema validator, to create and validate any schema that is used or worked with-->
-    <dependency>
-        <groupId>com.jayway.restassured</groupId>
-        <artifactId>json-schema-validator</artifactId>
-        <version>2.4.1</version>
-    </dependency>
+        <!-- Start REST Core requirements -->
 
-    <!--Selenium is used for accessing the browser from the local machine-->
+        <dependency>
+            <groupId>com.jayway.restassured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>2.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-lgpl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.4.0</version>
+        </dependency>
+
+        <!-- End REST Core requirements -->
+
+        <!--Selenium is used for accessing the browser from the local machine-->
     <dependency>
         <groupId>org.seleniumhq.selenium</groupId>
         <artifactId>selenium-java</artifactId>
@@ -137,5 +156,28 @@
     </dependency>
 
 </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <id>copy-dependencies</id>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>./mavenRepository/</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>

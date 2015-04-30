@@ -1,4 +1,8 @@
 package rest_testing.rest_service_component;
+
+/**
+ * Just playing around with some different ways of using rest services with Jackson 
+ */
 import java.io.IOException;
 import java.util.List;
 
