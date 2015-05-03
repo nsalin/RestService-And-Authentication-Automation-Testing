@@ -1,0 +1,10 @@
+{
+  "testPOST":"http://jsonplaceholder.typicode.com/users",
+  "testGETWithParameters":"http://jsonplaceholder.typicode.com/users?name=test&id=3",
+  "testGET":"http://jsonplaceholder.typicode.com/users/1",
+  "testPUT":"http://jsonplaceholder.typicode.com/users/1",
+  "testPATCH":"http://jsonplaceholder.typicode.com/users/1",
+  "testDELETE":"http://jsonplaceholder.typicode.com/users/4",
+  "testOPTIONS":"http://jsonplaceholder.typicode.com/users/*"
+
+}
