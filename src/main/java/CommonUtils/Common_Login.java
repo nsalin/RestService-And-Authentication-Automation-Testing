@@ -1,7 +1,5 @@
-package LogInLogOutTests;
+package CommonUtils;
 
-import CommonUtils.Logging;
-import CommonUtils.Utils;
 import ConnectionPackage.Browser.BrowserConnection;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;

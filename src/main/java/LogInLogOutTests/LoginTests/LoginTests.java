@@ -5,7 +5,7 @@ import CommonUtils.Logging;
 import CommonUtils.MessageConstants;
 import CommonUtils.Utils;
 import ConnectionPackage.Browser.BrowserConnection;
-import LogInLogOutTests.Common_Login;
+import CommonUtils.Common_Login;
 import org.apache.log4j.Logger;
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
@@ -156,7 +156,7 @@ public class LoginTests {
     }
 
     @Test
-    public void tstLogOut() {
+    public void testLogOut() {
         try {
 
             String mainTitleElementText = BrowserConnection.driver.findElement(By.xpath("//div[@class='example']/h2")).getText();
